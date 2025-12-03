@@ -5,7 +5,7 @@ nixPkgs = ['php82', 'php82Packages.composer', 'nodejs_20']
 cmds = ['composer install --no-dev --optimize-autoloader']
 
 [phases.build]
-cmds = ['npm ci', 'npm run build']
+cmds = ['rm -rf node_modules', 'npm install', 'npm run build', 'ls -la public/build']
 
 [start]
 cmd = 'sh Procfile'
